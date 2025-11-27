@@ -269,23 +269,26 @@
 
         /* ★★★ 新文案規則 ★★★ */
         function getAdvice(rainProb, maxTemp) {
-            let rainIcon = "🌂";
-            let rainText = "晴天娃娃眷顧你";
+            let rainIcon = "🌻";
+            let rainText = "好天氣";
 
             if (parseInt(rainProb) > 30) {
                 rainIcon = "☂️";
-                rainText = "風雨蕭蕭易水寒";
+                rainText = "記得帶傘";
             }
 
             let clothIcon = "👕";
             let clothText = "舒適穿搭";
 
             if (parseInt(maxTemp) >= 28) {
-                clothIcon = "🎽";
-                clothText = "短袖出發";
-            } else if (parseInt(maxTemp) <= 20) {
+                clothIcon = "🧢";
+                clothText = "短褲短袖、記得防曬";
+            } else if (parseInt(maxTemp) <= 23 && parseInt(maxTemp) >= 18 ) {
                 clothIcon = "🧥";
-                clothText = "加件外套";
+                clothText = "加件外套、小心著涼";
+            } else if (parseInt(maxTemp) < 18) {
+                clothIcon = "❄️";
+                clothText = "攜帶暖暖包、圍巾";
             }
 
             return { rainIcon, rainText, clothIcon, clothText };
